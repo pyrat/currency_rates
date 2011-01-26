@@ -1,0 +1,56 @@
+CurrencyRates
+=============
+
+Very simple class for getting up to date currency rates in an array. You pass a base currency which the rates will be converted into. Connects to the european bank
+to get a daily breakdown of the rates.
+
+This is deliberated lightweight to allow you to build on top of this.
+
+Example
+=======
+
+<pre>
+parser = CurrencyRates::Parser.new('GBP')
+puts parser.engage.inspect
+</pre>
+
+Valid values for the initialize call are:
+
+<pre>
+"USD"
+"JPY"
+"BGN"
+"CZK"
+"DKK"
+"EEK"
+"GBP"
+"HUF"
+"LTL"
+"LVL"
+"PLN"
+"RON"
+"SEK"
+"CHF"
+"NOK"
+"HRK"
+"RUB"
+"TRY"
+"AUD"
+"BRL"
+"CAD"
+"CNY"
+"HKD"
+"IDR"
+"INR"
+"KRW"
+"MXN"
+"MYR"
+"NZD"
+"PHP"
+"SGD"
+"THB"
+"ZAR"
+"EUR"
+</pre>
+
+Copyright (c) 2011 Alastair Brunton, released under the MIT license
