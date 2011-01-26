@@ -1,0 +1,69 @@
+h1. CurrencyRates
+
+
+Very simple class for getting up to date currency rates in an array. You pass a base currency which the rates will be converted into. Connects to the european bank
+to get a daily breakdown of the rates.
+
+This is deliberately lightweight to allow you to build on top of this.
+
+h2. Example
+
+<pre>
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'currency_rates'
+
+parser = CurrencyRates::Parser.new('GBP')
+puts parser.engage.inspect
+</pre>
+
+Valid values for the initialize call are:
+
+<pre>
+"USD"
+"JPY"
+"BGN"
+"CZK"
+"DKK"
+"EEK"
+"GBP"
+"HUF"
+"LTL"
+"LVL"
+"PLN"
+"RON"
+"SEK"
+"CHF"
+"NOK"
+"HRK"
+"RUB"
+"TRY"
+"AUD"
+"BRL"
+"CAD"
+"CNY"
+"HKD"
+"IDR"
+"INR"
+"KRW"
+"MXN"
+"MYR"
+"NZD"
+"PHP"
+"SGD"
+"THB"
+"ZAR"
+"EUR"
+</pre>
+
+Example result array:
+
+<pre lang="ruby">
+[{"currency"=>"USD", "rate"=>"1.58482"}, {"currency"=>"JPY", "rate"=>"130.28671"}, {"currency"=>"BGN", "rate"=>"2.26562"}, {"currency"=>"CZK", "rate"=>"28.05560"}, {"currency"=>"DKK", "rate"=>"8.63284"}, {"currency"=>"ILS", "rate"=>"5.71573"}, {"currency"=>"GBP", "rate"=>"1.00000"}, {"currency"=>"HUF", "rate"=>"317.67159"}, {"currency"=>"LTL", "rate"=>"3.99977"}, {"currency"=>"LVL", "rate"=>"0.81552"}, {"currency"=>"PLN", "rate"=>"4.48653"}, {"currency"=>"RON", "rate"=>"4.94642"}, {"currency"=>"SEK", "rate"=>"10.26180"}, {"currency"=>"CHF", "rate"=>"1.49690"}, {"currency"=>"NOK", "rate"=>"9.11266"}, {"currency"=>"HRK", "rate"=>"8.58558"}, {"currency"=>"RUB", "rate"=>"47.14741"}, {"currency"=>"TRY", "rate"=>"2.50090"}, {"currency"=>"AUD", "rate"=>"1.58992"}, {"currency"=>"BRL", "rate"=>"2.64361"}, {"currency"=>"CAD", "rate"=>"1.57892"}, {"currency"=>"CNY", "rate"=>"10.43290"}, {"currency"=>"HKD", "rate"=>"12.33837"}, {"currency"=>"IDR", "rate"=>"14323.90385"}, {"currency"=>"INR", "rate"=>"72.43649"}, {"currency"=>"KRW", "rate"=>"1770.37938"}, {"currency"=>"MXN", "rate"=>"19.10177"}, {"currency"=>"MYR", "rate"=>"4.83614"}, {"currency"=>"NZD", "rate"=>"2.06591"}, {"currency"=>"PHP", "rate"=>"70.20678"}, {"currency"=>"SGD", "rate"=>"2.02989"}, {"currency"=>"THB", "rate"=>"48.82247"}, {"currency"=>"ZAR", "rate"=>"11.25607"}, {"currency"=>"EUR", "rate"=>"1.15841"}]
+</pre>
+
+
+
+
+Copyright (c) 2011 Alastair Brunton, released under the MIT license
